@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "units": "inch",
+    "header": ["G20", "G90", "G17", "G54", "G40", "G49", "G80"]
+  },
+  "templates": {
+    "drill": {
+      "description": "Drill a hole at X,Y with drill diam and depth",
+      "code": [
+        "T{tool} M6",
+        "S{spindle} M3",
+        "G00 X{X} Y{Y}",
+        "G81 R{R} Z-{depth} F{feed}",
+        "G80"
+      ]
+    },
+    "contour": {
+      "description": "Profile contour: follow points path (absolute coordinates)",
+      "pre": ["T{tool} M6", "S{spindle} M3"],
+      "code_pattern": "G00 X{x0} Y{y0}\\nG01 X{x1} Y{y1} F{feed}\\n... (repeat for each segment)"
+    }
+  },
+  "rules": [
+    "Only use commands in 'header' and template 'code' strings.",
+    "Units: inches (G20).",
+    "Positions must be absolute (G90).",
+    "Return EXACT JSON block with fields: program_text (string)",
+    "If any data missing or ambiguous, respond EXACTLY: ERROR - INVALID INPUT"
+  ]
+}
+

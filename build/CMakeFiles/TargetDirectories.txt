@@ -1,0 +1,3 @@
+/home/jacob/ME3227/project/DTGC/build/CMakeFiles/cad_to_gcode.dir
+/home/jacob/ME3227/project/DTGC/build/CMakeFiles/edit_cache.dir
+/home/jacob/ME3227/project/DTGC/build/CMakeFiles/rebuild_cache.dir
